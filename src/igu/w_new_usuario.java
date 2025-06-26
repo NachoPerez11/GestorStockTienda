@@ -25,10 +25,10 @@ public class w_new_usuario extends javax.swing.JFrame {
             Wini ini = new Wini(new File(archivo.getAbsolutePath()));            
             usuarios = ini.get("Archivos", "usuarios");                      
         }catch(IOException e){
-            javax.swing.JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null, 
                     "Error al abrir archivo", 
                     "Error", 
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE);
         } 
     }
 

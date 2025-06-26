@@ -162,17 +162,17 @@ public class w_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClientesActionPerformed
-        if(tipo.equals("emp")){
-            //w_lista_clientes list = new w_lista_clientes(tipo);
-            //list.setLocationRelativeTo(null);
-            //list.setVisible(true);
-            //this.dispose();
+        if("emp".equals(tipo)){
+            w_lista_clientes list = new w_lista_clientes(tipo);
+            list.setLocationRelativeTo(null);
+            list.setVisible(true);
+            this.dispose();
         }
-        else if(tipo.equals("admin")){
-            //w_admin_clientes admin = new w_admin_clientes(tipo);
-            //agregar.setLocationRelativeTo(null);
-            //admin.setVisible(true);
-            //this.dispose();
+        else if("admin".equals(tipo)){
+            w_admin_clientes admin = new w_admin_clientes(tipo);
+            admin.setLocationRelativeTo(null);
+            admin.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_btnVerClientesActionPerformed
 

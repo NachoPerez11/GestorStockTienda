@@ -1,12 +1,35 @@
 package igu;
 
-public class w_lista_clientes extends javax.swing.JFrame {
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import logica.Cliente;
+import org.ini4j.Wini;
+
+public final class w_lista_clientes extends javax.swing.JFrame {
     //variables globales
     String tipo;
+    String archivoClientes;
+    ArrayList<Cliente> listaClientes = new ArrayList<>();
     
     public w_lista_clientes(String t) {
         initComponents();
         tipo = t;
+        try{
+        File archivo = new File("myiniFinal.ini"); 
+            Wini ini = new Wini(new File(archivo.getAbsolutePath()));            
+            archivoClientes = ini.get("Archivos", "clientes");
+        }catch(IOException ex){
+            JOptionPane.showMessageDialog(null, 
+                    "Error al abrir archivo", 
+                    "Error", 
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        LeerDatos_cliente();
+        mostrarDatos_cliente();
     }
 
     @SuppressWarnings("unchecked")
@@ -87,12 +110,46 @@ public class w_lista_clientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        //w_principal volver = new w_principal();
-        //volver.setVisible(true);
-        //volver.setLocationRelativeTo(null);
-        //this.dispose();
+        w_principal volver = new w_principal(tipo);
+        volver.setVisible(true);
+        volver.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    //metodos    
+    public void mostrarDatos_cliente() {
+        String matriz[][] = new String[listaClientes.size()][5];
+        for (int i = 0; i < listaClientes.size(); i++) {
+            matriz[i][0] = listaClientes.get(i).getDni();
+            matriz[i][1] = listaClientes.get(i).getNombre();
+            matriz[i][2] = listaClientes.get(i).getTelefono();
+            matriz[i][3] = listaClientes.get(i).getEmail();
+            matriz[i][4] = listaClientes.get(i).getDireccion();
+        }
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{"DNI", "Nombre", "Teléfono", "Email", "Dirección"}
+        ));
+
+    }
+    
+    public void LeerDatos_cliente() {
+        try {
+            File archivo = new File(archivoClientes);
+            if (!archivo.exists()) return;
+            FileInputStream fin = new FileInputStream(archivo.getAbsolutePath());
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            listaClientes = (ArrayList<Cliente>) ois.readObject();
+            ois.close();
+            fin.close();
+        } catch (IOException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null,
+                        "No se pudo abrir el archivo.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;

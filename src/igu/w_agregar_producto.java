@@ -24,10 +24,10 @@ public class w_agregar_producto extends javax.swing.JFrame {
         Wini ini = new Wini(new File(archivo.getAbsolutePath()));
         archivoProductos = ini.get("Archivos", "productos");
         } catch (IOException e) {
-            javax.swing.JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null, 
                     "Error al abrir archivo", 
                     "Error", 
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
 
