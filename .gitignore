@@ -5,17 +5,8 @@
 /nbproject/private/
 /nbproject/nbproject/
 
-# Ignorar clases compiladas
-*.class
-
 # Ignorar archivos de configuración o temporales
 *.log
 *.tmp
 *.bak
 *.swp
-
-# Ignorar configuraciones específicas o sensibles
-myiniFinal.ini
-
-# Ignorar archivos de datos que no son parte del código
-*.txt

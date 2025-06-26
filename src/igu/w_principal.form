@@ -110,7 +110,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnProducts">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Stock Disponible"/>
+                <Property name="text" type="java.lang.String" value="Ver stock disponible"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProductsActionPerformed"/>
@@ -118,7 +118,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnNewProduct">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar Productos"/>
+                <Property name="text" type="java.lang.String" value="Cargar productos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewProductActionPerformed"/>
@@ -142,7 +142,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerClientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Clientes"/>
+                <Property name="text" type="java.lang.String" value="Ver clientes"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerClientesActionPerformed"/>

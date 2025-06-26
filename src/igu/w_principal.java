@@ -1,15 +1,17 @@
 package igu;
 public class w_principal extends javax.swing.JFrame {
-    private static String tipo;
+    
+    // Variables globales
+    String tipo;
     
     public w_principal(String t) {
         initComponents();
         tipo = t;
-        if(tipo.equals("admin")){
+        if("admin".equals(tipo)){
             btnAdminUsuarios.setEnabled(true);
             btnVerClientes.setText("Administrar Clientes");
         }
-        else if(tipo.equals("emp")){
+        else if("emp".equals(tipo)){
             btnAdminUsuarios.setEnabled(false);
             btnVerClientes.setText("Ver Clientes");
         }
@@ -30,14 +32,14 @@ public class w_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnProducts.setText("Ver Stock Disponible");
+        btnProducts.setText("Ver stock disponible");
         btnProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProductsActionPerformed(evt);
             }
         });
 
-        btnNewProduct.setText("Cargar Productos");
+        btnNewProduct.setText("Cargar productos");
         btnNewProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewProductActionPerformed(evt);
@@ -58,7 +60,7 @@ public class w_principal extends javax.swing.JFrame {
             }
         });
 
-        btnVerClientes.setText("Ver Clientes");
+        btnVerClientes.setText("Ver clientes");
         btnVerClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerClientesActionPerformed(evt);
@@ -144,11 +146,13 @@ public class w_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewProductActionPerformed
 
     private void btnProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductsActionPerformed
-        // TODO add your handling code here:
+        w_lista_productos inicio = new w_lista_productos(tipo);
+        inicio.setLocationRelativeTo(null); 
+        inicio.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProductsActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
-        // PopUp par confirmar??
         tipo = "";
         w_login inicio = new w_login();
         inicio.setLocationRelativeTo(null); 
@@ -157,13 +161,20 @@ public class w_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClientesActionPerformed
-        //w_listaClientes list = new w_listaClientes();
-        //list.setVisible(true);
-        //this.dispose();
+        if(tipo.equals("emp")){
+            w_lista_clientes list = new w_lista_clientes(tipo);
+            list.setVisible(true);
+            this.dispose();
+        }
+        else if(tipo.equals("admin")){
+            //w_admin_clientes admin = new w_admin_clientes(tipo);
+            //admin.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnVerClientesActionPerformed
 
     private void btnAdminUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminUsuariosActionPerformed
-        w_new_usuario Frame = new w_new_usuario();
+        w_new_usuario Frame = new w_new_usuario(tipo);
         Frame.setVisible(true);
         Frame.pack();
         Frame.setLocationRelativeTo(null); 

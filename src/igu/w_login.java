@@ -17,17 +17,7 @@ public class w_login extends javax.swing.JFrame {
             File archivo = new File("myiniFinal.ini"); 
             Wini ini = new Wini(new File(archivo.getAbsolutePath()));            
             usuarios = ini.get("Archivos", "usuarios");
-            /*
-            Nombresis = ini.get("App", "Nombre");
-            Autor1 = ini.get("App", "Autor1");
-            Autor2 = ini.get("App", "Autor1");
-            Autor3 = ini.get("App", "Autor1");
-            Email = ini.get("App", "Email");
-            Telefono = ini.get("App", "Telefeno");
-            Web = ini.get("App", "Web");
-            */
             LeerDatos_usuario();
-            //MostrarDatos_usuario();
         }
         catch(IOException e){
             System.err.println("Error al abrir el archivo");
@@ -162,20 +152,6 @@ public class w_login extends javax.swing.JFrame {
                     javax.swing.JOptionPane.ERROR_MESSAGE);
             System.out.print("Error en la lectura: " + ex.getMessage());
         }
-    }
-    
-    public static void MostrarDatos_usuario(){
-        String matriz[][] = new String[lista_usuarios.size()][4];
-            for (int i = 0; i < lista_usuarios.size(); i++) {
-                matriz[i][0]=lista_usuarios.get(i).getId();
-                System.out.print(matriz[i][0]);
-                matriz[i][1]=lista_usuarios.get(i).getUsuario();
-                System.out.print(matriz[i][1]);
-                matriz[i][2]=lista_usuarios.get(i).getClave(); 
-                System.out.print(matriz[i][2]);
-                matriz[i][3]=lista_usuarios.get(i).getTipo();
-                System.out.print(matriz[i][3]);
-            }
     }
     
     public void VerificarTipoUsuario(int i){
