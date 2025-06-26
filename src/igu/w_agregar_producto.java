@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package igu;
 
 import org.ini4j.Wini;
-import java.io.Serializable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,29 +17,26 @@ import logica.Producto;
  */
 public class w_agregar_producto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form w_agregar_producto
-     */
     public w_agregar_producto() {
         initComponents();
         try {
-        File archivo = new File("myiniFinal.ini");
-        Wini ini = new Wini(new File(archivo.getAbsolutePath()));
+            File archivo = new File("myiniFinal.ini");
+            Wini ini = new Wini(new File(archivo.getAbsolutePath()));
 
-        archivoProductos = ini.get("Archivos", "productos");
+            archivoProductos = ini.get("Archivos", "productos");
 
-        NombreSis = ini.get("App", "Nombre");
-        Autor = ini.get("App", "Autor");
-        Email = ini.get("App", "Email");
-        Telefono = ini.get("App", "Telefono");
-        Web = ini.get("App", "Web");
+            NombreSis = ini.get("App", "Nombre");
+            Autor = ini.get("App", "Autor");
+            Email = ini.get("App", "Email");
+            Telefono = ini.get("App", "Telefono");
+            Web = ini.get("App", "Web");
 
-        //this.LeerDatos_productos();     // Método que carga la lista de productos
-        //this.mostrarDatos_productos();  // Método que muestra la lista en la interfaz
-    } catch (Exception e) {
-        System.err.println(e.getMessage());
-    }
-    this.jLabel3.setText("");
+            this.LeerDatos_productos();     // Método que carga la lista de productos
+            //this.mostrarDatos_productos();  // Método que muestra la lista en la interfaz
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
     }
 
     /**
