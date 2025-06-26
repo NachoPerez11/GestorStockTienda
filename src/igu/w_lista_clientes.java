@@ -87,8 +87,9 @@ public class w_lista_clientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        //w_principal princi = new w_principal();
-        //princi.setVisible(true);
+        //w_principal volver = new w_principal();
+        //volver.setVisible(true);
+        //volver.setLocationRelativeTo(null);
         //this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 

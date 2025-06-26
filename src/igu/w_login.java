@@ -121,7 +121,6 @@ public class w_login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        
         int i = 0;
         while (i < lista_usuarios.size() && (!lista_usuarios.get(i).getClave().equals(new String(txtPass.getPassword())) || !lista_usuarios.get(i).getUsuario().equals(txtUser.getText()))) {
             i++;

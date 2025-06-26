@@ -126,6 +126,7 @@ public class w_lista_productos extends javax.swing.JFrame {
 
     private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
         w_principal volver = new w_principal(tipo);
+        volver.setLocationRelativeTo(null);
         volver.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverMenuActionPerformed

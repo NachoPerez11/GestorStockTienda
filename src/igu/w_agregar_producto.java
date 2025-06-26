@@ -221,6 +221,7 @@ public class w_agregar_producto extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         w_principal volver = new w_principal(tipo);
+        volver.setLocationRelativeTo(null);
         volver.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed

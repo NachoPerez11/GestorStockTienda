@@ -154,6 +154,7 @@ public class w_new_usuario extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         w_principal volver = new w_principal(tipo);
         volver.setVisible(true);
+        volver.setLocationRelativeTo(null); 
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
     

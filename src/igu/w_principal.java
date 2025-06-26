@@ -141,6 +141,7 @@ public class w_principal extends javax.swing.JFrame {
 
     private void btnNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewProductActionPerformed
         w_agregar_producto agregar = new w_agregar_producto();
+        agregar.setLocationRelativeTo(null);
         agregar.setVisible(true);
         this.dispose(); 
     }//GEN-LAST:event_btnNewProductActionPerformed
@@ -148,7 +149,7 @@ public class w_principal extends javax.swing.JFrame {
     private void btnProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductsActionPerformed
         w_lista_productos inicio = new w_lista_productos(tipo);
         inicio.setLocationRelativeTo(null); 
-        inicio.setVisible(true);
+        inicio.setVisible(true); 
         this.dispose();
     }//GEN-LAST:event_btnProductsActionPerformed
 
@@ -162,22 +163,23 @@ public class w_principal extends javax.swing.JFrame {
 
     private void btnVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerClientesActionPerformed
         if(tipo.equals("emp")){
-            w_lista_clientes list = new w_lista_clientes(tipo);
-            list.setVisible(true);
-            this.dispose();
+            //w_lista_clientes list = new w_lista_clientes(tipo);
+            //list.setLocationRelativeTo(null);
+            //list.setVisible(true);
+            //this.dispose();
         }
         else if(tipo.equals("admin")){
             //w_admin_clientes admin = new w_admin_clientes(tipo);
+            //agregar.setLocationRelativeTo(null);
             //admin.setVisible(true);
-            this.dispose();
+            //this.dispose();
         }
     }//GEN-LAST:event_btnVerClientesActionPerformed
 
     private void btnAdminUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminUsuariosActionPerformed
         w_new_usuario Frame = new w_new_usuario(tipo);
+        Frame.setLocationRelativeTo(null);
         Frame.setVisible(true);
-        Frame.pack();
-        Frame.setLocationRelativeTo(null); 
         this.dispose();
     }//GEN-LAST:event_btnAdminUsuariosActionPerformed
     
