@@ -139,21 +139,33 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblNombre">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="lblNombre"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCodigo">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtCod"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPrecio">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtPrecio"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Precio:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblStock">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtStock"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Stock:"/>
           </Properties>
         </Component>
@@ -274,6 +286,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblDescripcion">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtDescript"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
           </Properties>
         </Component>

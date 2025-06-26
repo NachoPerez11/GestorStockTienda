@@ -23,10 +23,12 @@ public class w_agregar_producto extends javax.swing.JFrame {
         File archivo = new File("myiniFinal.ini");
         Wini ini = new Wini(new File(archivo.getAbsolutePath()));
         archivoProductos = ini.get("Archivos", "productos");
-    } catch (IOException e) {
-        System.err.println(e.getMessage());
-    }
-    this.lblDescripcion.setText("");
+        } catch (IOException e) {
+            javax.swing.JOptionPane.showMessageDialog(null, 
+                    "Error al abrir archivo", 
+                    "Error", 
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -54,12 +56,16 @@ public class w_agregar_producto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblNombre.setLabelFor(lblNombre);
         lblNombre.setText("Nombre:");
 
+        lblCodigo.setLabelFor(txtCod);
         lblCodigo.setText("Código:");
 
+        lblPrecio.setLabelFor(txtPrecio);
         lblPrecio.setText("Precio:");
 
+        lblStock.setLabelFor(txtStock);
         lblStock.setText("Stock:");
 
         txtNomb.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +125,7 @@ public class w_agregar_producto extends javax.swing.JFrame {
             }
         });
 
+        lblDescripcion.setLabelFor(txtDescript);
         lblDescripcion.setText("Descripción");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
